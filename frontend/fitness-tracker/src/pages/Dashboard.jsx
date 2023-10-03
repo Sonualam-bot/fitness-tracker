@@ -5,7 +5,7 @@ import "../Css/Header.css"
 
 
 //assets
-import totalCalorie from "../assets/totalCalorie.png"
+import totalCalorie from "../assets/totalcalorie.png"
 import food from "../assets/dinner.png"
 import remainingTime from "../assets/hourglass.png"
 import goal from "../assets/target.png"

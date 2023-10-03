@@ -13,7 +13,7 @@ const user = require("./routes/user.router")
 
 
 const corsOptions = {
-    origin: 'https://fitness-tracker-weld.vercel.app'
+    origin: 'https://fitness-tracker-orpin.vercel.app'
 };
 
 app.use(cors(corsOptions));

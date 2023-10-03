@@ -24,7 +24,7 @@ export const UserProfile = () => {
                 <div>
                     <h2>{profile?.nickname}</h2>
                     <h3>@{profile?.username}</h3>
-                    <a href="https://github.com/Sonualam-bot/fitness-tracker/tree/main" >GitHub</a>
+                    <a href="https://github.com/Sonualam-bot/fitness-tracker/tree/main" target="_blank" >GitHub</a>
                 </div>
                 <div class="logout-container">
                     <button class="logout-button" onClick={handleUserLogout}>Logout</button>

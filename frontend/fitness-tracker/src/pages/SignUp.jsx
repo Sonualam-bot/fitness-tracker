@@ -46,6 +46,7 @@ export const Signup = ({ setIsUserAuthenticated }) => {
     return (
         <>
             <div className="container">
+                <h1>Register Here </h1>
                 <form onSubmit={handleUserSignUp}>
                     <input placeholder="Email" value={userInput?.email} name="email" onChange={handleUserInput} />
                     <input placeholder="Username" value={userInput?.username} name="username" onChange={handleUserInput} />

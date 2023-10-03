@@ -20,6 +20,11 @@
   margin: 45px;
 }
 
+.profile > a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .logout-container {
   text-align: center;
   margin-top: 20px;

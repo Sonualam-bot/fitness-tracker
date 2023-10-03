@@ -3,6 +3,8 @@ import { setSignupUser, setUserLogin, userLoggingIn } from "../actions/userActio
 import { fetchUserLogin } from "../services/auth.service";
 import { Navigate, useNavigate } from "react-router";
 
+import "../Css/Signup.css"
+
 export const Login = () => {
     const userLoginInput = useSelector(state => state.userState.userLogin);
     const userLoginInput1 = useSelector(state => state.userState.login);

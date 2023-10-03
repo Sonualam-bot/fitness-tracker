@@ -37,11 +37,13 @@ export const Login = () => {
 
     return (
         <>
-            <form onSubmit={handleUserLoginFormSubmit} >
-                <input placeholder="Email" name="email" value={userLoginInput?.email} onChange={handleUserLoginInput} />
-                <input placeholder="password" name="password" value={userLoginInput?.password} onChange={handleUserLoginInput} />
-                <button type="submit">Submit</button>
-            </form>
+            <div className="container">
+                <form onSubmit={handleUserLoginFormSubmit} >
+                    <input placeholder="Email" name="email" value={userLoginInput?.email} onChange={handleUserLoginInput} />
+                    <input placeholder="password" name="password" value={userLoginInput?.password} onChange={handleUserLoginInput} />
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </>
     )
 }

@@ -4,6 +4,7 @@ import { fetchSignup } from "../services/auth.service";
 import { Navigate, useNavigate } from "react-router";
 
 import "../Css/Signup.css"
+import { NavLink } from "react-router-dom";
 
 
 export const Signup = ({ setIsUserAuthenticated }) => {
@@ -47,6 +48,7 @@ export const Signup = ({ setIsUserAuthenticated }) => {
         <>
             <div className="container">
                 <h1>Register Here </h1>
+                <br />
                 <form onSubmit={handleUserSignUp}>
                     <input placeholder="Email" value={userInput?.email} name="email" onChange={handleUserInput} />
                     <input placeholder="Username" value={userInput?.username} name="username" onChange={handleUserInput} />
@@ -56,6 +58,7 @@ export const Signup = ({ setIsUserAuthenticated }) => {
                     <input placeholder="phone Number" value={userInput?.phoneNumber} name="phoneNumber" onChange={handleUserInput} />
                     <input placeholder="address" value={userInput?.address} name="address" onChange={handleUserInput} />
                     <button type="submit">Submit</button>
+                    {/* <p>Already Registered?? <NavLink to="/login" >Login</NavLink> </p> */}
                 </form>
             </div>
         </>

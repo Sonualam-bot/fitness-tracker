@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:4000/api/v1/food';
+const BASE_URL = 'https://fitness-tracker-renon.onrender.com/api/v1';
 
 
 export const fetchFood = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}`);
+        const response = await axios.get(`${BASE_URL}/food`);
         if (response.status === 200) {
             const food = response.data.foods;
             return food
@@ -18,7 +18,7 @@ export const fetchFood = async () => {
 
 export const deleteFoodItem = async (id) => {
     try {
-        const response = await axios.delete(`${BASE_URL}/` + id)
+        const response = await axios.delete(`${BASE_URL}/food` + id)
         if (response.status === 200) {
             const data = response.data.deletedFoodItem
             return data
@@ -31,7 +31,7 @@ export const deleteFoodItem = async (id) => {
 
 export const createFoodItem = async (newFood) => {
     try {
-        const response = await axios.post(`${BASE_URL}`, newFood);
+        const response = await axios.post(`${BASE_URL}/food`, newFood);
         if (response.status === 200) {
             const data = response.data.newFood;
             return data

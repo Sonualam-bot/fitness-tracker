@@ -1,10 +1,10 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:4000/api/v1/exercises';
+const BASE_URL = 'https://fitness-tracker-renon.onrender.com/api/v1';
 
 export const fetchExercise = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}`);
+        const response = await axios.get(`${BASE_URL}/exercises`);
         if (response.status === 200) {
             const data = response.data.exercise;
             return data
@@ -16,7 +16,7 @@ export const fetchExercise = async () => {
 
 export const deleteExercise = async (id) => {
     try {
-        const response = await axios.delete(`${BASE_URL}/${id}`);
+        const response = await axios.delete(`${BASE_URL}/exercises/${id}`);
         if (response.status === 200) {
             const data = response.data.deletedExercise
             return data
@@ -29,7 +29,7 @@ export const deleteExercise = async (id) => {
 
 export const createNewExercise = async (newExercise) => {
     try {
-        const response = await axios.post(`${BASE_URL}`, newExercise);
+        const response = await axios.post(`${BASE_URL}/exercises`, newExercise);
         if (response.status === 200) {
             const data = response.data.exercise
             return data

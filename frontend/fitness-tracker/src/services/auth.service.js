@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setSignupUser } from "../actions/userAction";
 
-const BASE_URL = 'http://localhost:4000/api/v1';
+const BASE_URL = 'https://fitness-tracker-renon.onrender.com/api/v1';
 
 export const fetchSignup = async (userData) => {
     try {

@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:4000/api/v1/goals';
+const BASE_URL = 'https://fitness-tracker-renon.onrender.com/api/v1';
 
 
 export const fetchGoals = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}`);
+        const response = await axios.get(`${BASE_URL}/goals`);
         if (response.status === 200) {
             const goals = response.data.goals
             return goals
@@ -20,7 +20,7 @@ export const fetchGoals = async () => {
 export const deleteGoal = async (id) => {
     try {
         console.log("here")
-        const response = await axios.delete(`${BASE_URL}/` + id);
+        const response = await axios.delete(`${BASE_URL}/goals/` + id);
         console.log(response)
         if (response.status === 200) {
             const deleteGoal = response.data.delete
@@ -33,7 +33,7 @@ export const deleteGoal = async (id) => {
 
 export const createGoals = async (goal) => {
     try {
-        const response = await axios.post(`${BASE_URL}`, goal);
+        const response = await axios.post(`${BASE_URL}/goals`, goal);
         if (response.status === 200) {
             const data = response.data.goal
             return data

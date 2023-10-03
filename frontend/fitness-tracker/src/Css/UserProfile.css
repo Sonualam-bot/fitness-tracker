@@ -1,0 +1,41 @@
+.imgeDiv > img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.imgeDiv {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 45px;
+}
+
+.logout-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logout-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}

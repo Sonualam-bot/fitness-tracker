@@ -1,0 +1,34 @@
+.goalContainer-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.goalline {
+  background-color: #f59e0b;
+  height: 5px;
+  width: 80%;
+  margin: 2px auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.goalCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  /* box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.2); */
+  background-color: #21222d;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.goalCard:hover {
+  box-shadow: 0 0 1px 1px #64748b;
+}

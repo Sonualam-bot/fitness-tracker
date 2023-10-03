@@ -1,0 +1,26 @@
+{
+  "name": "fitness-tracker",
+  "version": "1.0.0",
+  "main": "backend/server.js",
+  "scripts": {
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && node server.js",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && npm run build",
+    "start-client": "cd frontend && npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.3",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "description": ""
+}

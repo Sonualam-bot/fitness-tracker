@@ -1,0 +1,45 @@
+/* NavigationLeft.css */
+
+.navigationPanel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.navlink {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 50px;
+  gap: 0.8rem;
+  text-decoration: none;
+  font-size: larger;
+  font-weight: 700;
+  color: #9ca3af;
+  transition: background-color 0.3s, padding 0.3s;
+  text-align: left;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+.navlink > svg {
+  font-size: 1.5rem;
+}
+
+.navlink:hover {
+  background-color: #6b98e7;
+  color: #ffffff;
+  padding: 0.8rem;
+  border-radius: 10px;
+}
+
+/* .navlink:active {
+  background-color: #4973bb;
+  color: #ffffff;
+  border-radius: 10px;
+} */

@@ -1,0 +1,55 @@
+.homeContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0rem;
+  box-sizing: border-box;
+
+  /* height: 95vh;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden; */
+}
+
+.nav-parent {
+  width: 160px;
+  box-shadow: 0 0 2px 1px #94a3b8;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* border-radius: 0 0.5rem 0.5rem 0rem; */
+}
+
+.nav-parent > img {
+  padding-left: 13px;
+}
+
+.line {
+  background-color: #f59e0b;
+  height: 5px;
+  width: 70%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.routesContainer {
+  width: 850px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  /* overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 90vh; */
+}
+
+.profileContainer {
+  width: 300px;
+  height: 100vh;
+  box-shadow: 0 0 1px 1px #64748b;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

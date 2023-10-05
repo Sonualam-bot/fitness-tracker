@@ -52,7 +52,7 @@ export const Signup = ({ setIsUserAuthenticated }) => {
                     <input placeholder="Email" value={userInput?.email} name="email" onChange={handleUserInput} />
                     <input placeholder="Username" value={userInput?.username} name="username" onChange={handleUserInput} />
                     <input placeholder="Password" value={userInput?.password} name="password" onChange={handleUserInput} />
-                    <input placeholder="profile Picture" value={userInput?.profilePictureUrl} name="profilePictureUrl" onChange={handleUserInput} />
+                    <input placeholder="profile Picture url" value={userInput?.profilePictureUrl} name="profilePictureUrl" onChange={handleUserInput} />
                     <input placeholder="nickname" value={userInput?.nickname} name="nickname" onChange={handleUserInput} />
                     <input placeholder="phone Number" value={userInput?.phoneNumber} name="phoneNumber" onChange={handleUserInput} />
                     <input placeholder="address" value={userInput?.address} name="address" onChange={handleUserInput} />

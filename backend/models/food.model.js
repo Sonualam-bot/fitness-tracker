@@ -10,6 +10,11 @@ const foodItemSchema = new mongoose.Schema({
     proteinGrams: Number,
     carbohydratesGrams: Number,
     fatGrams: Number,
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+    }
 });
 
 const foodNames = {

@@ -2,9 +2,9 @@ import toast from "react-hot-toast";
 import { setFoods } from "../actions/foodAction"
 import { deleteFoodItem, fetchFood } from "../services/food.services";
 
-export const getFoods = async (dispatch) => {
+export const getFoods = async (dispatch, id) => {
     try {
-        const data = await fetchFood();
+        const data = await fetchFood(id);
         dispatch(setFoods(data))
     } catch (error) {
         console.log(error)

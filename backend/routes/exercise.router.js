@@ -35,9 +35,12 @@ router.post('/exercises', async (req, res) => {
 })
 
 
-router.get('/exercises', async (req, res) => {
+
+
+router.get('/exercises/:userId', async (req, res) => {
     try {
-        const exercise = await getAllExercises();
+        const userId = req.params.userId;
+        const exercise = await getAllExercises(userId);
         res.status(200).json({
             success: true,
             message: 'Successfully fetched all exercises',
@@ -50,6 +53,10 @@ router.get('/exercises', async (req, res) => {
         })
     }
 })
+
+
+
+
 
 router.delete('/exercises/:exerciseId', async (req, res) => {
     try {

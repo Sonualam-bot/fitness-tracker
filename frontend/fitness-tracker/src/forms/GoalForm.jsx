@@ -9,6 +9,7 @@ import toast from "react-hot-toast"
 
 export const GoalForm = ({ isOpen, onClose }) => {
     const goalInput = useSelector(state => state.goalState.goalInput)
+    const user = useSelector((state) => state.userState.user)
     const dispatch = useDispatch()
 
     const handleGoalInput = (e) => {
@@ -19,9 +20,9 @@ export const GoalForm = ({ isOpen, onClose }) => {
     const handleGoalFormSubmit = async (e) => {
         e.preventDefault()
         try {
-            const submit = await createGoals(goalInput)
+            const submit = await createGoals({ ...goalInput, user: user._id })
             if (submit) {
-                getGoals(dispatch)
+                getGoals(dispatch, user._id)
                 dispatch(updateGoalInput({
                     goalName: "",
                     goalDescription: "",
@@ -70,7 +71,8 @@ export const GoalForm = ({ isOpen, onClose }) => {
         padding: "10px",
         borderRadius: "5px",
         border: "1px solid #ccc",
-        backgroundColor: "#21222D"
+        backgroundColor: "#21222D",
+        width: "100%",
     };
 
 
@@ -83,6 +85,7 @@ export const GoalForm = ({ isOpen, onClose }) => {
         color: "#fff",
         border: "none",
         cursor: "pointer",
+        width: "100%",
     };
 
     const deleteButtonStyle = {
@@ -93,7 +96,8 @@ export const GoalForm = ({ isOpen, onClose }) => {
         color: "#fff",
         border: "none",
         cursor: "pointer",
-        fontWeight: "600"
+        fontWeight: "600",
+        width: "100%",
     };
 
 

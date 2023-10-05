@@ -32,9 +32,11 @@ router.post("/food", async (req, res) => {
 })
 
 
-router.get("/food", async (req, res) => {
+router.get("/food/:userId", async (req, res) => {
     try {
-        const foodItems = await getAllFoodItems();
+        const userId = req.params.userId;
+
+        const foodItems = await getAllFoodItems(userId);
         if (foodItems.length < 0) {
             res.json({
                 success: false,

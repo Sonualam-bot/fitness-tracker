@@ -6,21 +6,23 @@ import { useNavigate } from "react-router";
 
 function User() {
     const navigate = useNavigate()
-    const [isUserAuthenticated, setIsUserAuthenticated] = useState(localStorage.getItem("isAccount"));
+    const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
     const user = useSelector((state) => state.userState.user)
 
 
 
-    useEffect(() => {
-        if (user) {
-            navigate("/")
-        }
-    }, [user])
 
     return (
         <div>
             {
-                isUserAuthenticated ? <Login /> : <Signup setIsUserAuthenticated={setIsUserAuthenticated} />
+                !isUserAuthenticated ?
+                    <>
+                        <Login setIsUserAuthenticated={setIsUserAuthenticated} />
+
+                    </> : <>
+                        <Signup setIsUserAuthenticated={setIsUserAuthenticated} />
+
+                    </>
             }
 
 

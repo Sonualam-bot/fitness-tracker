@@ -2,10 +2,11 @@ const Exercise = require('../models/exercise.model')
 
 async function createExercise(exercise) {
     try {
-        const { exerciseName, durationMinutes, caloriesBurned } = exercise
+        const { exerciseName, durationMinutes, user } = exercise
         const newExercise = await Exercise.create({
             exerciseName,
-            durationMinutes
+            durationMinutes,
+            userId: user
         })
 
         return newExercise
@@ -15,9 +16,9 @@ async function createExercise(exercise) {
 }
 
 
-async function getAllExercises() {
+async function getAllExercises(userId) {
     try {
-        const exercises = await Exercise.find({});
+        const exercises = await Exercise.find({ userId });
         return exercises
     } catch (error) {
         throw error

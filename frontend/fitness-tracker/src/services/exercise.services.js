@@ -2,9 +2,9 @@ import axios from "axios";
 
 const BASE_URL = 'https://fitness-tracker-renon.onrender.com/api/v1';
 
-export const fetchExercise = async () => {
+export const fetchExercise = async (userId) => {
     try {
-        const response = await axios.get(`${BASE_URL}/exercises`);
+        const response = await axios.get(`${BASE_URL}/exercises/${userId}`);
         if (response.status === 200) {
             const data = response.data.exercise;
             return data
@@ -29,6 +29,7 @@ export const deleteExercise = async (id) => {
 
 export const createNewExercise = async (newExercise) => {
     try {
+        console.log(newExercise)
         const response = await axios.post(`${BASE_URL}/exercises`, newExercise);
         if (response.status === 200) {
             const data = response.data.exercise

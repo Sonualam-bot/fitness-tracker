@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 
 export const FoodForm = ({ isOpen, onClose }) => {
     const userInput = useSelector((state) => state.foodState.foodInput);
+    const user = useSelector((state) => state.userState.user)
     const dispatch = useDispatch();
 
     const handleUserFoodInput = (e) => {
@@ -17,9 +18,9 @@ export const FoodForm = ({ isOpen, onClose }) => {
     const handleFoodFromSubmit = async (e) => {
         e.preventDefault();
         try {
-            const submit = await createFoodItem(userInput);
+            const submit = await createFoodItem({ ...userInput, user: user._id });
             if (submit) {
-                getFoods(dispatch);
+                getFoods(dispatch, user._id);
                 dispatch(
                     updateUserFoodInput({
                         foodName: "",
@@ -70,7 +71,8 @@ export const FoodForm = ({ isOpen, onClose }) => {
         padding: "10px",
         borderRadius: "5px",
         border: "1px solid #ccc",
-        backgroundColor: "#21222D"
+        backgroundColor: "#21222D",
+        width: "100%",
     };
 
     const buttonStyle = {
@@ -81,6 +83,7 @@ export const FoodForm = ({ isOpen, onClose }) => {
         color: "#fff",
         border: "none",
         cursor: "pointer",
+        width: "100%",
     };
 
     const deleteButtonStyle = {
@@ -91,7 +94,8 @@ export const FoodForm = ({ isOpen, onClose }) => {
         color: "#fff",
         border: "none",
         cursor: "pointer",
-        fontWeight: "600"
+        fontWeight: "600",
+        width: "100%",
     };
 
     const foods = ["Oat Meal", "Nuts & Seeds", "Salmon", "Avacado", "Beans & Legumes", "Leafy Greens", "Muesli", "Eggs"]

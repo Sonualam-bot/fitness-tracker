@@ -18,9 +18,12 @@ export const Dashboard = () => {
     const caloriesGoal = useSelector(state => state.goalState.goals)
 
 
-    const totalCaloriesBurned = caloriesBurned?.reduce((acc, curr) => acc + curr?.caloriesBurned, 0)
-    const totalCaloriesConsumed = caloriesConsumed?.reduce((acc, curr) => acc + curr?.calories, 0)
-    const totalCaloriesGoal = caloriesGoal?.reduce((acc, curr) => acc + curr?.targetCaloriesValue, 0)
+    const totalCaloriesBurned = caloriesBurned?.reduce((acc, curr) => acc + curr?.caloriesBurned, 0);
+
+    const totalCaloriesConsumed = caloriesConsumed?.reduce((acc, curr) => acc + curr?.calories, 0);
+    console.log(totalCaloriesConsumed)
+    const totalCaloriesGoal = caloriesGoal?.reduce((acc, curr) => acc + curr?.targetCaloriesValue, 0);
+    console.log(totalCaloriesGoal)
 
     const totalCaloriesRemaining = totalCaloriesGoal - (totalCaloriesConsumed - totalCaloriesBurned);
 
@@ -41,22 +44,22 @@ export const Dashboard = () => {
                 <Container>
                     <Card>
                         <img src={totalCalorie} alt="totalCalorie" />
-                        <h3>{totalCaloriesConsumed}</h3>
+                        <h3>{totalCaloriesBurned ? totalCaloriesBurned : 0}</h3>
                         <p> Burned</p>
                     </Card>
                     <Card>
                         <img src={food} alt="totalCalorie" />
-                        <h3>{totalCaloriesGoal}</h3>
+                        <h3>{totalCaloriesConsumed ? totalCaloriesConsumed : 0}</h3>
                         <p> Consumed</p>
                     </Card>
                     <Card>
                         <img src={goal} alt="totalCalorie" />
-                        <h3>{totalCaloriesBurned}</h3>
+                        <h3>{totalCaloriesGoal ? totalCaloriesGoal : 0}</h3>
                         <p> Goal</p>
                     </Card>
                     <Card>
                         <img src={remainingTime} alt="totalCalorie" />
-                        <h3>{totalCaloriesRemaining}</h3>
+                        <h3>{totalCaloriesRemaining ? totalCaloriesRemaining : 0}</h3>
                         <p> Remaining</p>
                     </Card>
                 </Container>

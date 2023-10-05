@@ -2,9 +2,9 @@ import toast from "react-hot-toast"
 import { setExercises } from "../actions/exerciseAction"
 import { deleteExercise, fetchExercise } from "../services/exercise.services"
 
-export const getExercises = async (dispatch) => {
+export const getExercises = async (dispatch, id) => {
     try {
-        const data = await fetchExercise()
+        const data = await fetchExercise(id)
         dispatch(setExercises(data))
     } catch (error) {
         console.log(error)

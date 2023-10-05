@@ -3,9 +3,10 @@ import axios from "axios";
 const BASE_URL = 'https://fitness-tracker-renon.onrender.com/api/v1';
 
 
-export const fetchFood = async () => {
+
+export const fetchFood = async (userId) => {
     try {
-        const response = await axios.get(`${BASE_URL}/food`);
+        const response = await axios.get(`${BASE_URL}/food/${userId}`);
         if (response.status === 200) {
             const food = response.data.foods;
             return food

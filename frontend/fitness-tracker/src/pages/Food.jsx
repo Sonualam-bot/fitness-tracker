@@ -32,7 +32,8 @@ export const Food = () => {
         color: "#fff",
         border: "none",
         cursor: "pointer",
-        fontWeight: "600"
+        fontWeight: "600",
+        width: "200px",
     };
 
     const deleteButtonStyle = {

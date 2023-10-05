@@ -34,9 +34,11 @@ router.post("/goals", async (req, res) => {
     }
 })
 
-router.get("/goals", async (req, res) => {
+router.get("/goals/:userId", async (req, res) => {
     try {
-        const goals = await getAllGoals();
+        const userId = req.params.userId;
+
+        const goals = await getAllGoals(userId);
 
         if (!goals) {
             res.json({

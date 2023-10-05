@@ -27,7 +27,7 @@ export const userReducer = (state = initialState, action) => {
         case "SET_SIGNUP":
             return {
                 ...state,
-                user: { ...state.user, ...action.payload }
+                user: action.payload
             }
         case "USER_LOGIN":
             return {

@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 
 export const ExerciseForm = ({ isOpen, onClose }) => {
     const input = useSelector((state) => state.exerciseState.exerciseInput);
+    const user = useSelector((state) => state.userState.user)
     const dispatch = useDispatch();
 
     const handleUserInput = (e) => {
@@ -19,9 +20,9 @@ export const ExerciseForm = ({ isOpen, onClose }) => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
-            const submit = await createNewExercise(input);
+            const submit = await createNewExercise({ ...input, user: user._id });
             if (submit) {
-                getExercises(dispatch);
+                getExercises(dispatch, user._id);
                 dispatch(updateUserInput({ exerciseName: "", durationMinutes: "" }));
                 onClose();
                 toast.success("New Exercise added")
@@ -65,7 +66,8 @@ export const ExerciseForm = ({ isOpen, onClose }) => {
         padding: "10px",
         borderRadius: "5px",
         border: "1px solid #ccc",
-        backgroundColor: "#21222D"
+        backgroundColor: "#21222D",
+        width: "100%",
     };
 
     const buttonStyle = {
@@ -76,6 +78,7 @@ export const ExerciseForm = ({ isOpen, onClose }) => {
         color: "#fff",
         border: "none",
         cursor: "pointer",
+        width: "100%",
     };
 
     const deleteButtonStyle = {
@@ -86,7 +89,8 @@ export const ExerciseForm = ({ isOpen, onClose }) => {
         color: "#fff",
         border: "none",
         cursor: "pointer",
-        fontWeight: "600"
+        fontWeight: "600",
+        width: "100%",
     };
 
 

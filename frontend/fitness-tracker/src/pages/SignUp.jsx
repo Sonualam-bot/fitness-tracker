@@ -37,7 +37,6 @@ export const Signup = ({ setIsUserAuthenticated }) => {
                     address: "",
                 }))
                 setIsUserAuthenticated(true)
-                localStorage.setItem("isAccount", true)
             }
         } catch (error) {
             throw new Error(`${error.message}`)
@@ -58,7 +57,7 @@ export const Signup = ({ setIsUserAuthenticated }) => {
                     <input placeholder="phone Number" value={userInput?.phoneNumber} name="phoneNumber" onChange={handleUserInput} />
                     <input placeholder="address" value={userInput?.address} name="address" onChange={handleUserInput} />
                     <button type="submit">Submit</button>
-                    {/* <p>Already Registered?? <NavLink to="/login" >Login</NavLink> </p> */}
+                    <p onClick={() => setIsUserAuthenticated(false)}>Click me To Login In!!</p>
                 </form>
             </div>
         </>

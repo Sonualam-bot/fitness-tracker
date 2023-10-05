@@ -16,8 +16,18 @@
 .profile {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1.5rem;
-  margin: 45px;
+  margin: 20px;
+  background-color: #21222d;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.profile:hover {
+  box-shadow: 0 0 1px 1px #64748b;
 }
 
 .profile > a {

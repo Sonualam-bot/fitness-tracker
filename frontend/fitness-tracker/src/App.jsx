@@ -50,11 +50,10 @@ function App() {
 
   useEffect(() => {
     if (Object.keys(user).length > 0) {
-      getGoals(dispatch)
-      getFoods(dispatch)
-      getExercises(dispatch)
+      getGoals(dispatch, user._id)
+      getFoods(dispatch, user._id)
+      getExercises(dispatch, user._id)
     }
-
   }, [user])
 
 

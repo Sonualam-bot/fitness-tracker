@@ -6,7 +6,7 @@ async function createNewGoal(goal) {
             goalDescription,
             targetDate,
             targetCaloriesValue,
-            status } = goal;
+            status, user } = goal;
 
         const newGoal = await Goal.create({
             goalName,
@@ -14,6 +14,7 @@ async function createNewGoal(goal) {
             targetDate,
             targetCaloriesValue,
             status,
+            userId: user
         })
         return newGoal
     } catch (error) {
@@ -22,9 +23,9 @@ async function createNewGoal(goal) {
 }
 
 
-async function getAllGoals() {
+async function getAllGoals(userId) {
     try {
-        const allGoals = await Goal.find({});
+        const allGoals = await Goal.find({ userId });
         return allGoals
     } catch (error) {
         throw error

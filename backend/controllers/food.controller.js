@@ -6,7 +6,7 @@ async function createFoodItem(foodItem) {
             calories,
             proteinGrams,
             carbohydratesGrams,
-            fatGrams, } = foodItem;
+            fatGrams, user } = foodItem;
 
         const newFoodItem = await Food.create({
             foodName,
@@ -14,6 +14,7 @@ async function createFoodItem(foodItem) {
             proteinGrams,
             carbohydratesGrams,
             fatGrams,
+            userId: user
         })
 
         return newFoodItem
@@ -23,9 +24,9 @@ async function createFoodItem(foodItem) {
 }
 
 
-async function getAllFoodItems() {
+async function getAllFoodItems(userId) {
     try {
-        const foodItemsList = await Food.find({})
+        const foodItemsList = await Food.find({ userId })
         return foodItemsList
     } catch (error) {
         throw error

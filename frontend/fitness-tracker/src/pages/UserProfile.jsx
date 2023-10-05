@@ -31,7 +31,7 @@ export const UserProfile = () => {
         <>
             <div className="profile">
                 <div className="imgeDiv">
-                    <img src={!profile?.profilePictureUrl === "" ? profile?.profilePictureUrl : image} alt="profile" />
+                    <img src={profile?.profilePictureUrl !== "" ? profile?.profilePictureUrl : image} alt="profile" />
                 </div>
                 <div>
                     <h2>{profile?.nickname}</h2>

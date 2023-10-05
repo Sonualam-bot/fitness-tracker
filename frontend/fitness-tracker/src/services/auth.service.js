@@ -3,6 +3,7 @@ import { setSignupUser } from "../actions/userAction";
 
 const BASE_URL = 'https://fitness-tracker-renon.onrender.com/api/v1';
 
+
 export const fetchSignup = async (userData) => {
     try {
         const response = await axios.post(`${BASE_URL}/register`, userData);
